@@ -101,7 +101,9 @@ define(function(require) {
         this.nextItem();
       }
   
-      this.$('.chat-lines').animate({ scrollTop: 1000 }, "slow"); // 1000 chosen as is big enough to scroll to the bottom of the box with every click
+      const $chatLines = this.$('.chat-lines');
+      const lastChatBottom = $item.position().top + $item.outerHeight();
+      $chatLines.animate({ scrollTop: lastChatBottom }, "slow");
     },
 
     checkNextButton: function(nextStage) {
