@@ -64,6 +64,19 @@ define(function(require) {
           var continueText = context.model.get("_items")[stage]._button.buttonText || "Start";
           context.$(".stacklist-next").html(continueText);
         }
+        // Ensure .stacklist-button is positioned correctly on the first stage
+        if (stage === 0) {
+          var $item = context.$(".chat-line").eq(stage);
+          var h = $item.outerHeight();
+          var offset = $item.position();
+          context.$(".stacklist-button").css({
+            position: 'absolute',
+            top: offset.top + h + 16,
+            left: 0,
+            right: 0,
+            marginTop: 0
+          });
+        }
         context.showNextStage(stage);
       }, context.model.get("_items")[stage]._timeToShow * 1000);
     },
@@ -72,9 +85,13 @@ define(function(require) {
       var $item = this.$(".chat-line").eq(stage);
       $item.removeClass('u-display-none');
       var h = $item.outerHeight();
+      var offset = $item.position();
       this.$(".stacklist-button").css({
-        top: "+=" + (h + 4),
-        marginTop: '1.5rem'
+        position: 'absolute',
+        top: offset.top + h + 16,
+        left: 0,
+        right: 0,
+        marginTop: 0
       });
 
       if (this.model.get("_items").length - 1 === stage) { // reached the end
