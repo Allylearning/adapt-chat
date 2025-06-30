@@ -1,0 +1,169 @@
+{
+  "type": "object",
+  "$schema": "http://json-schema.org/draft-04/schema",
+  "id": "http://jsonschema.net",
+  "$ref": "http://localhost/plugins/content/component/model.schema",
+  "globals": {
+    "ariaRegion": {
+      "type": "string",
+      "required": true,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "translatable": true
+    }
+  },
+  "properties": {
+    "_supportedLayout": {
+      "type": "string",
+      "required": true,
+      "enum": ["full-width", "half-width", "both"],
+      "default": "both",
+      "editorOnly": true
+    },
+    "instruction": {
+      "type": "string",
+      "required": false,
+      "default": "",
+      "inputType": "Text",
+      "validators": [],
+      "help": "This is the instruction text"
+    },
+    "_chatboxHeight": {
+      "type": "object",
+      "required": false,
+      "title": "Chatbox height",
+      "properties": {
+        "_small": {
+          "type": "number",
+          "required": false,
+          "default": 400,
+          "title": "Small",
+          "inputType": "Number",
+          "help": "The mobile device height to assign to the chatbox. Scrollbars will appear inside it as chat grows to outsize it"
+        },
+        "_large": {
+          "type": "number",
+          "required": false,
+          "default": 600,
+          "title": "Large",
+          "inputType": "Number",
+          "help": "The desktop device height to assign to the chatbox. Scrollbars will appear inside it as chat grows to outsize it"
+        }
+      }
+    },
+    "_participants": {
+      "type": "array",
+      "required": true,
+      "title": "Participants",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "name": {
+            "type": "string",
+            "required": false,
+            "inputType": "Text",
+            "title": "Participant name",
+            "default": "",
+            "help": "the first particpant appears on the right. The others on the left.",
+            "translatable": true
+          },
+          "_icon": {
+            "type": "string",
+            "required": true,
+            "default": "The participant's icon",
+            "title": "Participant icon",
+            "inputType": "Asset:image",
+            "validators": ["required"]
+          }
+        }
+      }
+    },
+    "_items": {
+      "type": "array",
+      "required": true,
+      "title": "Chat lines",
+      "items": {
+        "type": "object",
+        "required": true,
+        "properties": {
+          "body": {
+            "type": "string",
+            "required": true,
+            "inputType": "TextArea",
+            "title": "Line text",
+            "default": "",
+            "validators": ["required"],
+            "translatable": true
+          },
+          "_graphic": {
+            "type": "object",
+            "required": false,
+            "title": "Line graphic",
+            "properties": {
+              "src": {
+                "type": "string",
+                "required": false,
+                "default": "",
+                "inputType": "Asset:image",
+                "validators": [],
+                "help": "This is the image that appears, if used with body text this will appear below"
+              },
+              "alt": {
+                "type": "string",
+                "required": false,
+                "title": "Alternative text",
+                "default": "",
+                "inputType": "Text",
+                "validators": [],
+                "help": "A description of the image; required when it has meaning that must be conveyed to the learner. For 'decorative' images, leave this blank.",
+                "translatable": true
+              }
+            }
+          },
+          "_participant": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Participant number",
+            "inputType": "Number",
+            "help": "The particpant who is speaking. The first participant is 0, the second 1 etc."
+          },
+          "_timeToShow": {
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "title": "Time to show",
+            "inputType": "Number",
+            "help": "The delay in seconds between each line of text appearing. Works with and without button."
+          },
+          "_button": {
+            "type": "object",
+            "required": false,
+            "properties": {
+              "_isEnabled": {
+                "type": "boolean",
+                "default": false,
+                "title": "Show button",
+                "help": "If shown the line requires a button press to show. If not the line appears automatically after the delay.",
+                "inputType": "Checkbox",
+                "validators": []
+              },
+              "buttonText": {
+                "type": "string",
+                "required": false,
+                "default": "Continue",
+                "inputType": "Text",
+                "validators": [],
+                "title": "Button text",
+                "help": "The text that appears on the button. Note the first line has to be a button.",
+                "translatable": true
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

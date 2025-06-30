@@ -1,0 +1,20 @@
+{
+  "name": "adapt-chat",
+  "description": "Creates a scenario driven 'group chat'",
+  "version": "5.2.3",
+  "framework": ">=5",
+  "displayName": "Chat",
+  "component": "chat",
+  "main": "/js/adapt-chat.js",
+  "homepage": "https://github.com/kingsonline/adapt-chat",
+  "repository": "git://github.com/kingsonline/adapt-chat.git",
+  "issues": "https://github.com/kingsonline/adapt-chat/issues",
+  "keywords": [
+    "adapt-plugin",
+    "adapt-component"
+  ],
+  "license": "GPLv3",
+  "authors": [
+    "Simon Date <simon.date@kcl.ac.uk>"
+  ]
+}

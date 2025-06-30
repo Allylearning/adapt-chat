@@ -1,0 +1,63 @@
+{
+    "_id": "c-05",
+    "_parentId": "b-05",
+    "_type": "component",
+    "_component": "chat",
+    "_classes": "",
+    "_layout": "full",
+    "title": "Chat",
+    "displayTitle": "Chat",
+    "body": "Let's listen into a friendly workplace conversation happening in the King's Online office.",
+    "_button": {
+      "continueText": "Continue"
+    },
+    "_singleParticipant": false,
+    "_participants": [{
+      "name": "Simon",
+      "_icon": "course/en/images/simon.jpg"
+    }, {
+      "name": "Louise",
+      "_icon": "course/en/images/louise.jpg"
+    },
+    {
+      "name": "Fabio",
+      "_icon": "course/en/images/fabio.jpg"
+    }],
+    "_items": [{
+        "body": "Wow this group chat is really cool",
+        "_participant": 1,
+        "_timeToShow": "2",
+        "_button": {
+          "_isEnabled": true,
+          "buttonText": "One new message"
+        }
+      },
+      {
+        "body": "Yes, I agree",
+        "_participant": 0,
+        "_timeToShow": "2",
+        "_button": {
+          "_isEnabled": false,
+          "buttonText": "turn 2"
+        }
+      },
+      {
+          "body": "I wonder what else we can do with it?",
+          "_participant": 2,
+          "_timeToShow": "3",
+          "_button": {
+            "_isEnabled": false,
+            "buttonText": "turn 3"
+          }
+        },
+        {
+          "body": "When can we use it in production.",
+          "_participant": 2,
+          "_timeToShow": "1.5",
+          "_button": {
+            "_isEnabled": false,
+            "buttonText": "I agree"
+          }
+        }
+    ]
+  }

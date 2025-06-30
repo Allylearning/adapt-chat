@@ -1,0 +1,34 @@
+<div class="stacklist__inner component__inner" role="region" aria-label="{{_globals._components._text.ariaRegion}}">
+  {{> component this}}
+
+  <div class="chat__widget component__widget">
+    <div class="chat-lines" role="list" aria-live="polite">
+      {{#each _items}}
+        <div class="chat-line participant-{{_participant}} u-display-none" role="listitem" id="chat-line-{{@index}}">
+          <div class="chat-icon">
+            <img class="chat-icon-inner" src="" alt="" role="presentation" />
+            <div class="chat-icon-name"> </div>
+          </div>
+          <div class="chat-text">
+                {{#if this.length}}
+                    {{{compile this}}}
+                {{else}}
+                    {{{compile body}}}
+                {{/if}}
+                {{#if _graphic.src}}
+                  <img class="chat-line-graphic" src="{{_graphic.src}}" {{#if _graphic.alt}}aria-label="{{{_graphic.alt}}}{{/if}}" />
+                {{/if}}
+          </div>
+        </div>
+      {{/each}}
+      <div class="stacklist-button u-display-none">
+        <button class="stacklist-next btn-text"
+                aria-label="{{_globals._accessibility._ariaLabels.next}}"
+                aria-describedby="chat-line-{{@index}}"
+                role="button">
+	                {{{_items.[0]._button.buttonText}}}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
