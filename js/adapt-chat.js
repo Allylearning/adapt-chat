@@ -101,9 +101,8 @@ define(function(require) {
         this.nextItem();
       }
   
-      const $chatLines = this.$('.chat-lines');
-      const lastChatBottom = $item.position().top + $item.outerHeight();
-      $chatLines.animate({ scrollTop: lastChatBottom }, "slow");
+      const itemEl = $item[0];
+      itemEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
     },
 
     checkNextButton: function(nextStage) {
