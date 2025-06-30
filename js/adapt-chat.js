@@ -101,8 +101,10 @@ define(function(require) {
         this.nextItem();
       }
   
-      const itemEl = $item[0];
-      itemEl.scrollIntoView({ behavior: 'smooth', block: 'end' });
+      window.scrollBy({
+        top: 150,
+        behavior: 'smooth'
+      });
     },
 
     checkNextButton: function(nextStage) {
