@@ -22,8 +22,8 @@ define(function(require) {
     },
 
     resize: function() {
-      const screenSize = Adapt.device.screenSize === 'large' ? '_large' : '_small';
-      this.$('.chat-lines').height(this.model.get('_chatboxHeight')[screenSize] + "px");
+      // Clear any inline height so .chat-lines can grow naturally
+      this.$('.chat-lines').css('height', '');
     },
 
     setupButton: function() {
