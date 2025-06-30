@@ -71,7 +71,7 @@ define(function(require) {
           var offset = $item.position();
           context.$(".stacklist-button").css({
             position: 'absolute',
-            top: offset.top + h + 16,
+            // top: offset.top + h + 16, // Removed to fix layout jump
             left: 0,
             right: 0,
             marginTop: 0
@@ -88,7 +88,6 @@ define(function(require) {
       var offset = $item.position();
       this.$(".stacklist-button").css({
         position: 'absolute',
-        top: offset.top + h + 16,
         left: 0,
         right: 0,
         marginTop: 0
