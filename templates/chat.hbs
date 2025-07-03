@@ -3,6 +3,7 @@
 
   <div class="chat__widget component__widget">
     <div class="chat-lines" role="list" aria-live="polite" tabindex="0">
+      <span class="u-visually-hidden" role="listitem" aria-hidden="true"></span>
       {{#each _items}}
         <div class="chat-line participant-{{_participant}} u-display-none" role="listitem" id="chat-line-{{@index}}">
           <div class="chat-icon">
@@ -20,15 +21,15 @@
                 {{/if}}
           </div>
         </div>
+        <div class="stacklist-button u-display-none">
+          <button class="stacklist-next btn-text"
+                  aria-label="{{_button.buttonText}}"
+                  aria-describedby="chat-line-{{@index}}"
+                  role="button">
+            {{{_button.buttonText}}}
+          </button>
+        </div>
       {{/each}}
-    </div>
-    <div class="stacklist-button u-display-none">
-      <button class="stacklist-next btn-text"
-              aria-label="{{_globals._accessibility._ariaLabels.next}}"
-              aria-describedby="chat-line-{{@index}}"
-              role="button">
-                {{{_items.[0]._button.buttonText}}}
-      </button>
     </div>
   </div>
 </div>
