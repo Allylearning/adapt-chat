@@ -21,15 +21,15 @@
                 {{/if}}
           </div>
         </div>
-        <div class="stacklist-button u-display-none">
-          <button class="stacklist-next btn-text"
-                  aria-label="{{_button.buttonText}}"
-                  aria-describedby="chat-line-{{@index}}"
-                  role="button">
-            {{{_button.buttonText}}}
-          </button>
-        </div>
       {{/each}}
+    </div>
+    <div class="stacklist-button u-display-none">
+      <button class="stacklist-next btn-text"
+              aria-label="{{_button.buttonText}}"
+              aria-describedby="chat-line-{{@index}}"
+              role="button">
+                {{{_items.[0]._button.buttonText}}}
+      </button>
     </div>
   </div>
 </div>
